@@ -7,7 +7,7 @@ This aplication requires a database to store the data of the notes somewhere. Si
 Comparisson of tools used for the develovpment of the project
 
 ## Backend
-| Language/Framework | Speed | Overhead | Compiled | Failarity |
+| Language/Framework | Speed | Small overhead | Compiled | Familarity |
 | --- | --- | --- | --- | --- |
 | Rust | <ul><li>- [x] </li></ul> | <ul><li>- [ ] </li></ul> | <ul><li>- [x] </li></ul> | <ul><li>- [x] </li></ul> |
 | Java | <ul><li>- [ ] </li></ul> | <ul><li>- [ ] </li></ul> | <ul><li>- [x] </li></ul> | <ul><li>- [x] </li></ul> |
@@ -16,7 +16,7 @@ Comparisson of tools used for the develovpment of the project
 Even with the develovpment overhead that comes with rust programming language, it has been chosen for backend due to the speed that it provides. 
 
 ## Frontend
-| Language/Framework | Speed | Overhead | Compiled | Failarity |
+| Language/Framework | Speed |  Overhead | Compiled | Familarity |
 | --- | --- | --- | --- | --- |
 | Angular8 | <ul><li>- [x] </li></ul> | <ul><li>- [ ] </li></ul> | <ul><li>- [x] </li></ul> | <ul><li>- [x] </li></ul> |
 | React | <ul><li>- [ ] </li></ul> | <ul><li>- [ ] </li></ul> | <ul><li>- [x] </li></ul> | <ul><li>- [x] </li></ul> |
