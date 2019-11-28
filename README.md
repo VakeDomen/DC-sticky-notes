@@ -1,6 +1,7 @@
 # DC-project
 This is a project for Distributed computing class. It is a sticky notes web application. 
 # Application requirements
+[Requirements](https://docs.google.com/document/d/1ShPJ5TvNQGqAfdrfGy3oRNR-eGiTaaTfVFEus0LNAws/edit)
 ## Functional requirements
 In this application the user has to be able to register an account, where he will get an email response in order to be able to confirm the registration. Once the user has registerd an account, he is able to login into the applicaiton. Once the user is logged in the user may create a new sticky note, wich contains a title, body and an optional due date. All the sticky notes are editable and deletable. User can also filter the notes depending on their date status (future/past). The displayed noted should be paginated to siplify the UI. The notes are sharable. To be able to share the user is able to create a group and invite other users to the group. The user should be able to dinamicly translate the notes to a chosen language. Also every note that is labled as public should have own publicly avalible endpoint. Also it sould be searchable in public notes dashboard. The user who crates a group should be able to add and remove users from the group. 
 
