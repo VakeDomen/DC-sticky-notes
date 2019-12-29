@@ -2,6 +2,29 @@
 This is a project for Distributed computing class. It is a sticky notes web application. 
 # Installation
 
+This project requires [docker-compose](https://github.com/docker/compose) to be installed on your system. To install docker, you can follow the instructions on the official [website](https://docs.docker.com/).
+
+To setup this project, simply clone the project and move into the project folder.
+```
+git clone https://github.com/VakeDomen/DC-sticky-notes.git
+```
+First you need to setup the ```.env``` file for the backend. Move into the ```backend``` directory and make a copy of ```.env.sample``` and rename it to ```.env```. Than open the file and specify the required values. If you are intending to launch the backend in this docker container, you only need to set the ```FRONTEND_ADDRESS``` to ```http://localhost```.
+Note that if you cange the ```BIND_ADDRESS```, you will have to also change the ```apiUrl``` environment variable in ```frontend/src/environments/environment.ts```, so the fronend can resolve the cange.
+```
+cd DC-sticky-notes/backend/
+cp .env.sample .env
+```
+Once you have modified the ```.env``` file, move back to the project root folder.
+```
+cd ..
+```
+To build and launch the project run:
+```
+docker-compose up
+```
+You may use the ```-d``` flag to run the container in the background. 
+Currently the backend is running on the port ```9000``` and frontend on port ```80```.
+
 # Application requirements
 [Requirements](https://docs.google.com/document/d/1ShPJ5TvNQGqAfdrfGy3oRNR-eGiTaaTfVFEus0LNAws/edit)
 ## Functional requirements
