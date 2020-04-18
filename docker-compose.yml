@@ -6,12 +6,35 @@ services:
       dockerfile: Dockerfile.frontend
     depends_on: 
       - backend
-    ports:
-      - 80:80
+#    ports:
+#      - 80:80
+    networks:
+      - proxy
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.notes.rule=Host(`${FRONTEND_DOMAIN}`)
+      - traefik.http.routers.notes.entrypoints=websecure
+      - traefik.http.routers.notes.tls=true
+      - traefik.http.routers.notes.tls.certresolver=le 
+
   backend:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    ports:
-      - 9000:9000
-    
+#    ports:
+#      - 9000:9000
+    networks:
+      - proxy
+    restart: unless-stopped
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.notes_api.rule=Host(`${BACKEND_DOMAIN}`)
+      - traefik.http.routers.notes_api.entrypoints=websecure
+      - traefik.http.routers.notes_api.tls=true
+      - traefik.http.routers.notes_api.tls.certresolver=le
+      - traefik.http.services.notes_api.loadbalancer.server.port=9000
+
+
+networks:
+  proxy:
+    external: true

@@ -1,8 +1,19 @@
 FROM rust:1.37
 RUN apt-get update \
     && apt-get install -y clang llvm-dev libclang-dev \
+    && apt-get install -y  libpq-dev \
+    && apt-get install -y pkg-config \
+    && apt-get install -y sqlite3 \
+#    && apt-get install -y sqlite \
+#    && apt-get install -y cc \
     && apt-get install -y libsqlite3-dev
-RUN cargo install diesel_cli --no-default-features --features "sqlite"
+RUN pkg-config --list-all
+#RUN ln -s /lib/x86_64-linux-gnu/libsqlite3.so.0 /lib/x86_64-linux-gnu/libsqlite3.s
+#RUN apt-get install -y libmariadbclient postgresql-libs sqlite
+#RUN cargo install pkg-config
+#RUN cargo install libsqlite3-dev
+#RUN apt-get update -y && apt-get upgrade -y
+RUN cargo install diesel_cli --no-default-features --features "sqlite-bundled"
 
 WORKDIR /usr/src/api
 COPY ./backend ./
@@ -12,4 +23,4 @@ RUN chmod +x backend_start.sh
 RUN cargo install --path /usr/src/api/
 
 CMD ["./backend_start.sh"]
-EXPOSE 9000/tcp
+EXPOSE 9000
