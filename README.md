@@ -72,7 +72,3 @@ The note itself if bound to two things: a user and optionally a group. The user 
 On the frontend the biggest challange to test was prefix filter implmentation. For the filter I implemented a trie prefix tree, that takes all the notes to filter. After writing something in the search filter box, the tree must collect all the notes that match the filter, ignoring the pagination, but still applying all the other filters. The challange was making it dynamic, so after every typed or deleted letter the filter result refreshes. The implementation could be further optimised by only fetching one page to display and than in the background fetch the rest of the data, to model the trie prefix tree. 
 
 After the application web interface was mostly done, I implemented a translation module. The module looks for a language .ts file, for every language that is specified in the module. Implementing new languages is therefore simple. Only thing that is needed is to sprecify the new language code in the module and add a language file in the languages folder. The language file must export three attributes. One is the language code, the language icon and the object that maps the language translations, needed in the application. The module than adds the language to possible language translations in the dropdown. All static text on the page is funneled through the translation module. 
-
-# Conclusion
-
-
